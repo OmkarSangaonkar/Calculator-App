@@ -2,44 +2,51 @@ import React, { useState } from "react";
 import { Container, Screen, Prevoius, Current, Button } from "./Main";
 
 const Calculator = () => {
+  // States to store the current input, previous input, and selected operation
   const [current, setCurrent] = useState("");
   const [prevoius, setPrevoius] = useState("");
   const [operations, setOperations] = useState("");
 
+  // Function to append a value to the current input
   const appendValueHandler = (el) => {
     const value = el.target.getAttribute("data");
+    // Check if the value is a decimal point and if the current input already contains one
     if (value === "." && current.includes(".")) return;
     setCurrent(current + value);
   };
 
-  // const deleteHandler = () => {
-  //   setCurrent(String(current).slice(0, -1));
-  // };
-
+  // Function to clear the current input, previous input, and selected operation
   const allclearHandler = () => {
     setCurrent("");
     setOperations("");
     setPrevoius("");
   };
 
+  // Function to change the sign of the current input
   const changeSignHandler = () => {
     if (current >= 0) {
+      // Change the sign of the current input to negative
       setCurrent(current * -1);
     }
   };
 
+  // Function to handle the selection of arithmetic operations (+, -, *, /, %)
   const chooseOperationHandler = (el) => {
+    // Check if the current input is empty; if so, return
     if (current === "") return;
+    // If there is a previous input, calculate the result and update the previous input
     if (prevoius !== "") {
       let value = compute();
       setPrevoius(value);
     } else {
+      // If there is no previous input, set the current input as the previous input
       setPrevoius(current);
     }
     setCurrent("");
     setOperations(el.target.getAttribute("data"));
   };
 
+  // Function to calculate the result based on the selected operation
   const equalHandler = () => {
     let value = compute();
     if (value === undefined || value == null) return;
@@ -47,6 +54,8 @@ const Calculator = () => {
     setPrevoius("");
     setOperations("");
   };
+
+  // Function to perform arithmetic operations (+, -, *, /, %) based on the selected operation
   const compute = () => {
     let result;
     let previousNumber = parseFloat(prevoius);

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+// Styling for the container of the calculator
 export const Container = styled.div`
   display: grid;
   justify-content: center;
@@ -12,6 +13,7 @@ export const Container = styled.div`
   border-radius: 10px;
 `;
 
+// Styling for the screen display of the calculator
 export const Screen = styled.div`
   grid-column: 1 / -1;
   background-color: rgba(60, 64, 67, 0.75);
@@ -26,16 +28,19 @@ export const Screen = styled.div`
   border-top-right-radius: 10px;
 `;
 
+// Styling for the previous input display on the screen
 export const Prevoius = styled.div`
   color: rgba(255, 255, 255, 0.75);
   font-size: 1.5rem;
 `;
 
+// Styling for the current input display on the screen
 export const Current = styled.div`
   color: white;
   font-size: 2.5rem;
 `;
 
+// Styling for the calculator buttons
 export const Button = styled.button`
   cursor: pointer;
   font-size: 2rem;
