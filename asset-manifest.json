@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/OmkarSangaonkar/Calculator-App/static/css/main.ae0fe1dd.css",
+    "main.js": "/OmkarSangaonkar/Calculator-App/static/js/main.83628d5c.js",
+    "index.html": "/OmkarSangaonkar/Calculator-App/index.html",
+    "main.ae0fe1dd.css.map": "/OmkarSangaonkar/Calculator-App/static/css/main.ae0fe1dd.css.map",
+    "main.83628d5c.js.map": "/OmkarSangaonkar/Calculator-App/static/js/main.83628d5c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ae0fe1dd.css",
+    "static/js/main.83628d5c.js"
+  ]
+}
